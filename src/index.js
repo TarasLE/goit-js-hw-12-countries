@@ -34,6 +34,7 @@ function onSearch(event) {
         then(data => {
             console.log(data.length);
             if (data.length > 10) {
+                clearCountriesList()
                 return error({
                     text: 'Too many matches found. Please try a more specific query',
                     type: 'info'
@@ -58,7 +59,7 @@ function renderDesirableCountry(country) {
 }
 
 function clearCountriesList() {
-    refs.countriesContainer.innerHTML = ''
+    refs.countriesContainer.innerHTML = '';
 }
 
 
