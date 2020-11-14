@@ -19,6 +19,11 @@ img {
 }
 
 .country-container {
-  display: block;
-  justify-content: start;
+  display: flex;
+  justify-content: center;
+}
+
+.country-description {
+  display: flex;
+  flex-direction: row;
 }
