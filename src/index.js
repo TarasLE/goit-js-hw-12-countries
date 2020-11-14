@@ -22,3 +22,5 @@ function onSearch(event) {
     fetch(url, option).then(response => response.json()).then(console.log)
     
 }
+
+console.log('test1');
