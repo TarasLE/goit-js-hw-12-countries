@@ -45,8 +45,8 @@ function onSearch(event) {
                 appendCountriesList(data);
                 // error = null;
             }
-        }).
-        then(appendCountriesList)
+        })
+        
     // debounce(500)
 }
 
