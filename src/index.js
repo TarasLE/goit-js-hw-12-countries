@@ -35,7 +35,7 @@ function appendCountriesList(countries) {
 }
 
 function clearCountriesList() {
-    refs.countriesContainer.insertAdjacentHTML = ''
+    refs.countriesContainer.innerHTML = ''
 }
 // console.log('test1');
 
