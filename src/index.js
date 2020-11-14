@@ -1,7 +1,7 @@
 import './styles.css';
 
 const refs = {
-    searchForm: document.querySelector('js-search-form'),
+    searchForm: document.querySelector('js-search-form'), 
     countriesContainer: document.querySelector('js-countries-container')
 }
 
