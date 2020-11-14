@@ -13,7 +13,7 @@ refs.searchForm.addEventListener('input', _.debounce(onSearch,500))
 function onSearch(event) {
     event.preventDefault();
 
-    const searchQuery = event.currentTarget.elements.query.value
+    const searchQuery = event.target.value
     console.log(searchQuery);
 
     const option = {
