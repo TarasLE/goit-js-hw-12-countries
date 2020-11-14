@@ -27,7 +27,7 @@ function onSearch(event) {
     }
 
     const url = `https://restcountries.eu/rest/v2/name/${searchQuery}`
-if (searchQuery) {
+if (searchQuery !=null) {
     return fetch(url, option).then(response => response.json()).
         then(data => {
             console.log(data.length);
