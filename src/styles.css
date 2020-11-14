@@ -26,4 +26,10 @@ img {
 .country-description {
   display: flex;
   flex-direction: row;
+  align-items: center;
+}
+
+.title {
+  display: block;
+  justify-content: center;
 }
