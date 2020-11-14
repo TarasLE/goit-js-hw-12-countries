@@ -1,31 +1,31 @@
 // import './styles.css';
 // import 'https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js'
 import '../node_modules/lodash/lodash'
-import countryApiServices from './countries-services'
-
 
 const refs = {
     searchForm: document.querySelector('.js-search-form'), 
     countriesContainer: document.querySelector('.js-countries-container')
 }
-
-const countryApiServices = new countryApiServices();
 // var debounce = require('lodash.debounce');
 refs.searchForm.addEventListener('input', _.debounce(onSearch,500))
 // console.log(refs.searchForm);
 
-let searchQuery = '';
+
 function onSearch(event) {
     event.preventDefault();
 
-     searchQuery = event.target.value
-    // console.log(searchQuery);
+    const searchQuery = event.target.value
+    console.log(searchQuery);
 
-    countryApiServices.fetchCountries((searchQuery))
-    
+    const option = {
+        headers: {}
+    }
+
+    const url = `https://restcountries.eu/rest/v2/name/${searchQuery}`
+
+    fetch(url, option).then(response => response.json()).then(console.log)
+    // debounce(500)
 }
-
-
 
 // console.log('test1');
 
