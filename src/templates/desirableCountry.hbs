@@ -1,6 +1,18 @@
-{{#each this}}
-<li>
-    <span>Desirable country</span>
-    <h1>{{name}}</h1>
-</li>
-{{/each}}
+<h3>{{name}}</h3>
+<div>
+    <div>
+        <h2>Capital: <span>{{capital}}</span></h2>
+        <h2>Population: <span>{{population}}</span></h2>
+        <h2>Languages:</h2>
+        <ul>
+            {{#each this}}
+            <li>
+                <h1>{{languages}}</h1>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+    <div>
+        <img src={{flag}} alt="Flag of the capital">
+    </div>
+</div>
