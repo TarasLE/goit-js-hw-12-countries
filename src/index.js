@@ -6,7 +6,7 @@ const refs = {
     countriesContainer: document.querySelector('.js-countries-container')
 }
 // var debounce = require('lodash.debounce');
-refs.searchForm.addEventListener('input', debounce(onSearch,500))
+refs.searchForm.addEventListener('input', _.debounce(onSearch,500))
 // console.log(refs.searchForm);
 
 
