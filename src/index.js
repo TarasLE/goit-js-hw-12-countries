@@ -17,7 +17,7 @@ function onSearch(event) {
         headers: {}
     }
 
-    const url = 'https://restcountries.eu/rest/v2/name'
+    const url = 'https://restcountries.eu/rest/v2/$(searhQuery)'
 
     fetch(url, option).then(response => response.json()).then(console.log)
     
