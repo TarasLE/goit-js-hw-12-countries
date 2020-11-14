@@ -1,6 +1,7 @@
 // import './styles.css';
 // import 'https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js'
 import '../node_modules/lodash/lodash'
+import countriesListTpl from './templates/countries-list.hbs'
 
 const refs = {
     searchForm: document.querySelector('.js-search-form'), 
@@ -10,11 +11,11 @@ const refs = {
 refs.searchForm.addEventListener('input', _.debounce(onSearch,500))
 // console.log(refs.searchForm);
 
-
+let searchQuery = '';
 function onSearch(event) {
     event.preventDefault();
 
-    const searchQuery = event.target.value
+    searchQuery = event.target.value
     console.log(searchQuery);
 
     const option = {
@@ -23,10 +24,18 @@ function onSearch(event) {
 
     const url = `https://restcountries.eu/rest/v2/name/${searchQuery}`
 
-    fetch(url, option).then(response => response.json()).then(console.log)
+    // fetch(url, option).then(response => response.json()).then(console.log)
+    return fetch(url, option).then(response => response.json()).then(data => data.countries).then(appendCountriesList)
     // debounce(500)
 }
 
+function appendCountriesList(countries) {
+    refs.countriesContainer.insertAdjacentHTML("beforeend",countriesListTpl(countries))
+}
+
+function clearCountriesList() {
+    refs.countriesContainer.insertAdjacentHTML = ''
+}
 // console.log('test1');
 
 // const url = 'https://restcountries.eu/rest/v2/name/Colombia'
@@ -34,3 +43,4 @@ function onSearch(event) {
 //         headers: {}
 //     }
 // fetch(url, option).then(response => response.json()).then(console.log)
+console.log(searchQuery);
