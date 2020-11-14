@@ -25,7 +25,7 @@ function onSearch(event) {
     const url = `https://restcountries.eu/rest/v2/name/${searchQuery}`
 
     // fetch(url, option).then(response => response.json()).then(console.log)
-    return fetch(url, option).then(response => response.json()).then(data => data.name).then(console.log())
+    return fetch(url, option).then(response => response.json()).then(data => data).then(appendCountriesList)
     // debounce(500)
 }
 
