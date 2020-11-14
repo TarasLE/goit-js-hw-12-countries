@@ -19,17 +19,30 @@ img {
 }
 
 .country-container {
-  display: flex;
+  display: block;
   justify-content: center;
+  /* border: solid black; */
+  width: 50%;
 }
 
 .country-description {
-  display: flex;
+  padding: 50px;
+  display: block;
   flex-direction: row;
   align-items: center;
+}
+
+.description-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .title {
   display: block;
   justify-content: center;
+  text-align: center;
+}
+.input-form {
+  width: 50%;
 }
