@@ -1,12 +1,12 @@
 // import './styles.css';
-import 'https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"'
+// import 'https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js'
 
 const refs = {
     searchForm: document.querySelector('.js-search-form'), 
     countriesContainer: document.querySelector('.js-countries-container')
 }
 // var debounce = require('lodash.debounce');
-refs.searchForm.addEventListener('input', _.debounce(onSearch,500))
+refs.searchForm.addEventListener('input', debounce(onSearch,500))
 // console.log(refs.searchForm);
 
 
