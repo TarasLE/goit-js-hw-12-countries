@@ -1,4 +1,5 @@
 // import './styles.css';
+import 'https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"'
 
 const refs = {
     searchForm: document.querySelector('.js-search-form'), 
