@@ -40,7 +40,10 @@ function onSearch(event) {
                 })
             }
             else if (data.length === 1) { renderDesirableCountry(data); }
-            else { appendCountriesList(data) }
+            else {
+                appendCountriesList(data);
+                error = null;
+            }
         }).
         then(appendCountriesList)
     // debounce(500)
