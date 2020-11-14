@@ -34,7 +34,7 @@ function onSearch(event) {
         then(data => {
             console.log(data.length);
             if (data.length > 10) {
-                clearCountriesList()
+               console.log(data);
                 return error({
                     text: 'Too many matches found. Please try a more specific query',
                     type: 'info'
