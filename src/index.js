@@ -42,7 +42,7 @@ function onSearch(event) {
             else if (data.length === 1) { renderDesirableCountry(data); }
             else {
                 appendCountriesList(data);
-                error = null;
+                // error = null;
             }
         }).
         then(appendCountriesList)
