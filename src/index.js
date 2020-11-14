@@ -43,9 +43,8 @@ if (searchQuery !=null) {
                 appendCountriesList(data);
                 // error = null;
             }
-        })}
-        
-    // debounce(500)
+        }).catch(error =>{console.log('input error');})}
+      
 }
 
 function appendCountriesList(countries) {
