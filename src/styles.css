@@ -14,3 +14,10 @@ body {
 img {
   border: solid 1px black;
 }
+
+.country-container {
+  display: flex;
+  justify-content: center;
+  height: 100px;
+  font-weight: 100px;
+}
