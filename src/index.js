@@ -27,8 +27,7 @@ function onSearch(event) {
     }
 
     const url = `https://restcountries.eu/rest/v2/name/${searchQuery}`
-
-    // fetch(url, option).then(response => response.json()).then(console.log)
+if (searchQuery) {
     return fetch(url, option).then(response => response.json()).
         then(data => {
             console.log(data.length);
@@ -44,7 +43,7 @@ function onSearch(event) {
                 appendCountriesList(data);
                 // error = null;
             }
-        })
+        })}
         
     // debounce(500)
 }
@@ -62,11 +61,3 @@ function clearCountriesList() {
 }
 
 
-// console.log('test1');
-
-// const url = 'https://restcountries.eu/rest/v2/name/Colombia'
-// const option = {
-//         headers: {}
-//     }
-// fetch(url, option).then(response => response.json()).then(console.log)
-console.log(searchQuery);
