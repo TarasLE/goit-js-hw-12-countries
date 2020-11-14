@@ -1,5 +1,4 @@
-// import './styles.css';
-// import 'https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js'
+import './styles.css';
 import '../node_modules/lodash/lodash'
 import countriesListTpl from './templates/countries-list.hbs'
 import desiranbleCountryTpl from './templates/desirableCountry.hbs'
