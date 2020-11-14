@@ -13,11 +13,11 @@ body {
 
 img {
   border: solid 1px black;
+  height: 100px;
+  font-weight: 100px;
 }
 
 .country-container {
   display: flex;
   justify-content: center;
-  height: 100px;
-  font-weight: 100px;
 }
