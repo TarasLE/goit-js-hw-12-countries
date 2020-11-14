@@ -1,27 +1,34 @@
-import './styles.css';
+// import './styles.css';
 
 const refs = {
     searchForm: document.querySelector('.js-search-form'), 
     countriesContainer: document.querySelector('.js-countries-container')
 }
-
-refs.searchForm.addEventListener('change', onSearch)
+// var debounce = require('lodash.debounce');
+refs.searchForm.addEventListener('input', _.debounce(onSearch,500))
 // console.log(refs.searchForm);
 
 
 function onSearch(event) {
     event.preventDefault();
 
-    const searchQuery = event.currentTarget.element.query.value
+    const searchQuery = event.currentTarget.elements.query.value
+    console.log(searchQuery);
 
     const option = {
         headers: {}
     }
 
-    const url = 'https://restcountries.eu/rest/v2/$(searhQuery)'
+    const url = `https://restcountries.eu/rest/v2/name/${searchQuery}`
 
     fetch(url, option).then(response => response.json()).then(console.log)
-    
+    // debounce(500)
 }
 
-console.log('test1');
+// console.log('test1');
+
+// const url = 'https://restcountries.eu/rest/v2/name/Colombia'
+// const option = {
+//         headers: {}
+//     }
+// fetch(url, option).then(response => response.json()).then(console.log)
