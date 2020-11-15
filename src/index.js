@@ -39,11 +39,12 @@ function onSearch(event) {
                     text: 'Too many matches found. Please try a more specific query',
                     type: 'info'
                 })
+                 clearCountriesList()
             }
             else if (data.length === 1) {
                 renderDesirableCountry(data);
             }
-            else if (data.length === 0) {
+            else if (data.length === 0 && searchQuery !=null ) {
                 return
             }
             else {
