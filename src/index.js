@@ -46,6 +46,7 @@ function clearCountriesList() {
 }
 
 function findDesirableCountry(data) {
+    console.log(data.length);
     if (data.length > 10) {
             error({
                    delay: 1000,
