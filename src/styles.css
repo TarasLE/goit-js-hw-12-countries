@@ -21,9 +21,11 @@ img {
 .country-container {
   display: block;
   justify-content: center;
-  padding: 0;
-  /* border: solid black; */
   width: 50%;
+}
+
+.js-country-container {
+  padding: 0;
 }
 
 .country-description {
