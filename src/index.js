@@ -5,14 +5,12 @@ import desiranbleCountryTpl from './templates/desirableCountry.hbs'
 import '@pnotify/core/dist/BrightTheme.css';
 import '@pnotify/core/dist/PNotify.css';
 import fetchCountries from './js/fetchCountries'
+import refs from './js/refs'
 
 
 
 const { error } = require('@pnotify/core');
-const refs = {
-    searchForm: document.querySelector('.js-search-form'), 
-    countriesContainer: document.querySelector('.js-countries-container')
-}
+
 refs.searchForm.addEventListener('input', _.debounce(onSearch,500))
 
 let searchQuery = '';
