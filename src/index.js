@@ -21,7 +21,7 @@ function onSearch(event) {
     event.preventDefault();
     clearCountriesList()
 
-    searchQuery = event.target.value
+    searchQuery = event.target.value.trim()
     console.log(searchQuery);
 
     const option = {
@@ -29,7 +29,7 @@ function onSearch(event) {
     }
 
     const url = `https://restcountries.eu/rest/v2/name/${searchQuery}`
-if (searchQuery !=null) {
+// if (searchQuery !=null) {
     return fetch(url, option).then(response => response.json()).
         then(data => {
             console.log(data.length);
@@ -53,7 +53,7 @@ if (searchQuery !=null) {
             }
         }).catch(error =>{console.log('input error');})}
       
-}
+// }
 
 function appendCountriesList(countries) {
     refs.countriesContainer.insertAdjacentHTML("beforeend",countriesListTpl(countries))
