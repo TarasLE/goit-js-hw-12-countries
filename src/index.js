@@ -23,7 +23,7 @@ function onSearch(event) {
 
     searchQuery = event.target.value.trim()
 
-    if (searchQuery = 0) {
+    if (searchQuery === 0) {
         return
     }else{
 
