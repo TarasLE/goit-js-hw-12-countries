@@ -28,7 +28,7 @@ function onSearch(event) {
     const url = `https://restcountries.eu/rest/v2/name/${searchQuery}`
     return fetch(url, option).then(response => response.json()).
         then(data => data).then(findDesirableCountry).catch(error => {
-             console.log('Incorrect name of the counrty. Please check and try again');
+             console.log('Error fetching data');
         })
 }
       
@@ -46,8 +46,7 @@ function clearCountriesList() {
 }
 
 function findDesirableCountry(data) {
-    console.log(data.length);
-    console.log(searchQuery);
+    
     if (data.length > 10) {
             error({
                    delay: 1000,
