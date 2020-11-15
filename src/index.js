@@ -15,6 +15,7 @@ const refs = {
 refs.searchForm.addEventListener('input', _.debounce(onSearch,500))
 
 let searchQuery = '';
+
 function onSearch(event) {
     event.preventDefault();
     clearCountriesList()
