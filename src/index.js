@@ -5,6 +5,7 @@ import desiranbleCountryTpl from './templates/desirableCountry.hbs'
 import '@pnotify/core/dist/BrightTheme.css';
 import '@pnotify/core/dist/PNotify.css';
 // import { clearImmediate } from 'core-js';
+import  '@pnotify/core/dist/PNotify'
 
 
 const { error } = require('@pnotify/core');
@@ -49,6 +50,7 @@ function onSearch(event) {
                 return
             }
             else {
+                error.notice.close(immediate)
                 // error.close(immediate);
                 appendCountriesList(data);
                 // error = null;
