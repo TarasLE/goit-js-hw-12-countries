@@ -4,8 +4,7 @@ import countriesListTpl from './templates/countries-list.hbs'
 import desiranbleCountryTpl from './templates/desirableCountry.hbs'
 import '@pnotify/core/dist/BrightTheme.css';
 import '@pnotify/core/dist/PNotify.css';
-// import { clearImmediate } from 'core-js';
-import  '@pnotify/core/dist/PNotify'
+// import  '@pnotify/core/dist/PNotify'
 
 
 const { error } = require('@pnotify/core');
@@ -13,9 +12,7 @@ const refs = {
     searchForm: document.querySelector('.js-search-form'), 
     countriesContainer: document.querySelector('.js-countries-container')
 }
-// var debounce = require('lodash.debounce');
 refs.searchForm.addEventListener('input', _.debounce(onSearch,500))
-// console.log(refs.searchForm);
 
 let searchQuery = '';
 function onSearch(event) {
@@ -30,45 +27,37 @@ function onSearch(event) {
     }
 
     const url = `https://restcountries.eu/rest/v2/name/${searchQuery}`
-// if (searchQuery !=null) {
     return fetch(url, option).then(response => response.json()).
         then(data => {
             console.log(data.length);
             if (data.length > 10) {
                console.log(data);
                 error({
-                   delay: 800,
+                   delay: 1000,
                     text: 'Too many matches found. Please try a more specific query',
                     type: 'info'
                 })
-                //  clearCountriesList()
             }
             else if (data.length === 1) {
                 renderDesirableCountry(data);
             }
             else if (data.length === undefined) {
                 error({
-                delay: 800,
+                delay: 1000,
                 text: 'Incorrect name of the counrty. Please check and try again',
                 type: 'info'
             });
-                // error.remove();
-                // clearCountriesList()
-                return
+                
             }
             else {
-                // error.notice.close(immediate)
-                // error.close(immediate);
-                appendCountriesList(data);
-                // error = null;
+               appendCountriesList(data);
+               
             }
         }).catch(error => {
-            
-            console.log('Incorrect name of the counrty. Please check and try again');
+             console.log('Incorrect name of the counrty. Please check and try again');
         })
 }
       
-// }
 
 function appendCountriesList(countries) {
     refs.countriesContainer.insertAdjacentHTML("beforeend",countriesListTpl(countries))
