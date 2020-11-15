@@ -20,7 +20,6 @@ function onSearch(event) {
     clearCountriesList()
 
     searchQuery = event.target.value.trim()
-    console.log(searchQuery);
 
     const option = {
         headers: {}
