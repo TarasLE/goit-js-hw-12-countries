@@ -12,27 +12,10 @@ const refs = {
     searchForm: document.querySelector('.js-search-form'), 
     countriesContainer: document.querySelector('.js-countries-container')
 }
-refs.searchForm.addEventListener('input', _.debounce(onSearch,500))
 
+refs.searchForm.addEventListener('input', _.debounce(fetchCountries,500))
 let searchQuery = '';
-
-function onSearch(event) {
-    event.preventDefault();
-    clearCountriesList()
-
-    searchQuery = event.target.value.trim()
-
-    const option = {
-        headers: {}
-    }
-
-    const url = `https://restcountries.eu/rest/v2/name/${searchQuery}`
-    return fetch(url, option).then(response => response.json()).
-        then(data => data).then(findDesirableCountry).catch(error => {
-             console.log('Error fetching data');
-        })
-}
-      
+ 
 
 function appendCountriesList(countries) {
     refs.countriesContainer.insertAdjacentHTML("beforeend",countriesListTpl(countries))
