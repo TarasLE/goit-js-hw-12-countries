@@ -41,14 +41,14 @@ function onSearch(event) {
                     text: 'Too many matches found. Please try a more specific query',
                     type: 'info'
                 })
-                 clearCountriesList()
+                //  clearCountriesList()
             }
             else if (data.length === 1) {
                 renderDesirableCountry(data);
             }
             else if (data.length === undefined) {
                 error.remove();
-                clearCountriesList()
+                // clearCountriesList()
                 return
             }
             else {
@@ -57,7 +57,15 @@ function onSearch(event) {
                 appendCountriesList(data);
                 // error = null;
             }
-        }).catch(error =>{console.log('input error');})}
+        }).catch(error => {
+            error({
+                delay: 800,
+                text: 'Incorrect name of the counrty. Please check and try again',
+                type: 'info'
+            });
+            console.log('Incorrect name of the counrty. Please check and try again');
+        })
+}
       
 // }
 
