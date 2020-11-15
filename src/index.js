@@ -47,7 +47,12 @@ function onSearch(event) {
                 renderDesirableCountry(data);
             }
             else if (data.length === undefined) {
-                error.remove();
+                error({
+                delay: 800,
+                text: 'Incorrect name of the counrty. Please check and try again',
+                type: 'info'
+            });
+                // error.remove();
                 // clearCountriesList()
                 return
             }
@@ -58,11 +63,7 @@ function onSearch(event) {
                 // error = null;
             }
         }).catch(error => {
-            error({
-                delay: 800,
-                text: 'Incorrect name of the counrty. Please check and try again',
-                type: 'info'
-            });
+            
             console.log('Incorrect name of the counrty. Please check and try again');
         })
 }
