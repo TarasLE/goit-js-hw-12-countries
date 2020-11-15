@@ -4,7 +4,8 @@ import countriesListTpl from './templates/countries-list.hbs'
 import desiranbleCountryTpl from './templates/desirableCountry.hbs'
 import '@pnotify/core/dist/BrightTheme.css';
 import '@pnotify/core/dist/PNotify.css';
-import { clearImmediate } from 'core-js';
+// import { clearImmediate } from 'core-js';
+
 
 const { error } = require('@pnotify/core');
 const refs = {
@@ -41,7 +42,7 @@ if (searchQuery !=null) {
             }
             else if (data.length === 1) { renderDesirableCountry(data); }
             else {
-                error.close(clearImmediate);
+                error.close(immediate);
                 appendCountriesList(data);
                 // error = null;
             }
