@@ -36,7 +36,8 @@ function onSearch(event) {
             console.log(data.length);
             if (data.length > 10) {
                console.log(data);
-               error({
+                error({
+                   delay: 1000,
                     text: 'Too many matches found. Please try a more specific query',
                     type: 'info'
                 })
@@ -50,7 +51,8 @@ function onSearch(event) {
                 return
             }
             else {
-                error.notice.close(immediate)
+                error.remove();
+                // error.notice.close(immediate)
                 // error.close(immediate);
                 appendCountriesList(data);
                 // error = null;
