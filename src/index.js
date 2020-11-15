@@ -40,7 +40,12 @@ if (searchQuery !=null) {
                     type: 'info'
                 })
             }
-            else if (data.length === 1) { renderDesirableCountry(data); }
+            else if (data.length === 1) {
+                renderDesirableCountry(data);
+            }
+            else if (data.length === 0) {
+                return
+            }
             else {
                 // error.close(immediate);
                 appendCountriesList(data);
