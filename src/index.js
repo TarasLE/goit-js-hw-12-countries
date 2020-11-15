@@ -52,7 +52,9 @@ function findDesirableCountry(data) {
                    delay: 1000,
                     text: 'Too many matches found. Please try a more specific query',
                     type: 'info'
-                })
+            })
+        console.log('Error fetching data');
+        
             }
             else if (data.length === 1) {
                 renderDesirableCountry(data);
