@@ -65,8 +65,7 @@ function findDesirableCountry(data) {
                 text: 'Incorrect name of the counrty. Please check and try again',
                 type: 'info'
                 });
-            console.log('Error fetching data');
-                
+                            
             }
             else {
                appendCountriesList(data);
