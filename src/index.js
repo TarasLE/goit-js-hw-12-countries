@@ -23,9 +23,14 @@ function onSearch(event) {
 
     searchQuery = event.target.value.trim()
 
+    if (searchQuery = 0) {
+        return
+    }else{
+
     return fetchCountries(searchQuery).then(findDesirableCountry).catch(error => {
              console.log('Error fetching data');
-        })
+    })
+        }
 }
       
 
