@@ -35,7 +35,7 @@ if (searchQuery !=null) {
             console.log(data.length);
             if (data.length > 10) {
                console.log(data);
-                return error({
+               error({
                     text: 'Too many matches found. Please try a more specific query',
                     type: 'info'
                 })
