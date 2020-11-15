@@ -42,7 +42,7 @@ if (searchQuery !=null) {
             }
             else if (data.length === 1) { renderDesirableCountry(data); }
             else {
-                error.close(immediate);
+                // error.close(immediate);
                 appendCountriesList(data);
                 // error = null;
             }
