@@ -4,8 +4,5 @@ const option = {
     }
 
     const url = `https://restcountries.eu/rest/v2/name/${searchQuery}`
-    return fetch(url, option).then(response => response.json()).
-        then(data => data).then(findDesirableCountry).catch(error => {
-             console.log('Error fetching data');
-        })
+    return fetch(url, option)
 }
