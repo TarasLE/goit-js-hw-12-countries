@@ -6,7 +6,7 @@ import '@pnotify/core/dist/BrightTheme.css';
 import '@pnotify/core/dist/PNotify.css';
 import fetchCountries from './js/fetchCountries'
 import { refs } from './js/refs'
-// import { error } from './js/variables'
+import { error } from './js/variables'
 
 refs.searchForm.addEventListener('input', _.debounce(onSearch,500))
 
