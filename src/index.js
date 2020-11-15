@@ -4,7 +4,7 @@ import countriesListTpl from './templates/countries-list.hbs'
 import desiranbleCountryTpl from './templates/desirableCountry.hbs'
 import '@pnotify/core/dist/BrightTheme.css';
 import '@pnotify/core/dist/PNotify.css';
-// import  '@pnotify/core/dist/PNotify'
+
 
 
 const { error } = require('@pnotify/core');
@@ -28,11 +28,27 @@ function onSearch(event) {
 
     const url = `https://restcountries.eu/rest/v2/name/${searchQuery}`
     return fetch(url, option).then(response => response.json()).
-        then(data => {
-            console.log(data.length);
-            if (data.length > 10) {
-               console.log(data);
-                error({
+        then(data => data).then(findDesirableCountry).catch(error => {
+             console.log('Incorrect name of the counrty. Please check and try again');
+        })
+}
+      
+
+function appendCountriesList(countries) {
+    refs.countriesContainer.insertAdjacentHTML("beforeend",countriesListTpl(countries))
+}
+
+function renderDesirableCountry(country) {
+    refs.countriesContainer.insertAdjacentHTML("beforeend",desiranbleCountryTpl(country))
+}
+
+function clearCountriesList() {
+    refs.countriesContainer.innerHTML = '';
+}
+
+function findDesirableCountry(data) {
+    if (data.length > 10) {
+            error({
                    delay: 1000,
                     text: 'Too many matches found. Please try a more specific query',
                     type: 'info'
@@ -51,24 +67,7 @@ function onSearch(event) {
             }
             else {
                appendCountriesList(data);
-               
             }
-        }).catch(error => {
-             console.log('Incorrect name of the counrty. Please check and try again');
-        })
-}
-      
-
-function appendCountriesList(countries) {
-    refs.countriesContainer.insertAdjacentHTML("beforeend",countriesListTpl(countries))
-}
-
-function renderDesirableCountry(country) {
-    refs.countriesContainer.insertAdjacentHTML("beforeend",desiranbleCountryTpl(country))
-}
-
-function clearCountriesList() {
-    refs.countriesContainer.innerHTML = '';
 }
 
 
