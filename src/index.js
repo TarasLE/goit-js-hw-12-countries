@@ -23,8 +23,7 @@ function onSearch(event) {
 
     searchQuery = event.target.value.trim()
 
-    return fetchCountries(searchQuery).then(response => response.json()).
-        then(data => data).then(findDesirableCountry).catch(error => {
+    return fetchCountries(searchQuery).then(findDesirableCountry).catch(error => {
              console.log('Error fetching data');
         })
 }

@@ -4,5 +4,6 @@ const option = {
     }
 
     const url = `https://restcountries.eu/rest/v2/name/${searchQuery}`
-    return fetch(url, option)
+    return fetch(url, option).then(response => response.json()).
+        then(data => data)
 }
