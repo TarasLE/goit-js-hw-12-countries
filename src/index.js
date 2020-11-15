@@ -4,6 +4,7 @@ import countriesListTpl from './templates/countries-list.hbs'
 import desiranbleCountryTpl from './templates/desirableCountry.hbs'
 import '@pnotify/core/dist/BrightTheme.css';
 import '@pnotify/core/dist/PNotify.css';
+import fetchCountries from './fetchCountries'
 
 
 
@@ -22,15 +23,7 @@ function onSearch(event) {
 
     searchQuery = event.target.value.trim()
 
-    const option = {
-        headers: {}
-    }
-
-    const url = `https://restcountries.eu/rest/v2/name/${searchQuery}`
-    return fetch(url, option).then(response => response.json()).
-        then(data => data).then(findDesirableCountry).catch(error => {
-             console.log('Error fetching data');
-        })
+    return fetchCountries (searchQuery)
 }
       
 
