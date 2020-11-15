@@ -53,18 +53,19 @@ function findDesirableCountry(data) {
                     text: 'Too many matches found. Please try a more specific query',
                     type: 'info'
             })
-        console.log('Error fetching data');
+       
         
             }
             else if (data.length === 1) {
                 renderDesirableCountry(data);
             }
-            else if (data.length === undefined) {
-                error({
+    else if (data.length === undefined) {
+           error({
                 delay: 1000,
                 text: 'Incorrect name of the counrty. Please check and try again',
                 type: 'info'
-            });
+                });
+            console.log('Error fetching data');
                 
             }
             else {
