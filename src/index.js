@@ -46,9 +46,9 @@ function onSearch(event) {
             else if (data.length === 1) {
                 renderDesirableCountry(data);
             }
-            else if (data.length === 0 && searchQuery != null) {
+            else if (data.length === undefined) {
+                error.remove();
                 clearCountriesList()
-                 error.remove();
                 return
             }
             else {
